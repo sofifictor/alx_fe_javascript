@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dynamic Quote Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>Dynamic Quote Generator</h1>
+  <h1>Dynamic Quote Generator</h1>
 
-    <div id="controls" class="controls">
-      <label>
-        Filter:
-        <select id="categoryFilter">
-          <option value="all">All Categories</option>
-        </select>
-      </label>
+  <div id="quoteDisplay"></div>
+  <button id="newQuote">Show New Quote</button>
 
-      <button id="newQuote">Show New Quote</button>
-      <button id="forceSync">Sync Now</button>
-      <button id="exportJson">Export JSON</button>
-      <input type="file" id="importFile" accept=".json" />
-    </div>
+  <div>
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button id="addQuoteBtn">Add Quote</button>
+  </div>
 
-    <section id="quoteDisplay" class="quoteDisplay">Loading...</section>
+  <div>
+    <select id="categoryFilter" onchange="filterQuotes()">
+      <option value="all">All Categories</option>
+      <!-- Categories will be populated here dynamically -->
+    </select>
+  </div>
 
-    <!-- Add-quote UI will be created dynamically by createAddQuoteForm() -->
-    <div id="addQuoteContainer"></div>
-
-    <div id="status" class="status" aria-live="polite"></div>
-  </main>
+  <div>
+    <button id="exportBtn">Export Quotes</button>
+    <input type="file" id="importFile" accept=".json" />
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
+

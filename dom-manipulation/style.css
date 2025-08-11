@@ -1,11 +1,52 @@
-:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
-body { margin: 20px; background:#f8f9fb; color:#222; }
-.container { max-width:800px; margin:0 auto; }
-.controls { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
-.quoteDisplay { background:white; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.06); min-height:80px; }
-.quoteDisplay .text { font-size:1.25rem; margin-bottom:12px; }
-.quoteDisplay .meta { color:#666; font-size:.95rem; }
-#addQuoteContainer { margin-top:16px; }
-.status { margin-top:12px; color:#0b5; min-height:1.2em; }
-input[type="text"] { padding:6px 8px; border-radius:5px; border:1px solid #ddd; }
-button { padding:6px 10px; border-radius:6px; border:1px solid #cfcfcf; background: #fff; cursor:pointer; }
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#quoteDisplay {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #e3e3e3;
+  border-radius: 8px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin: 5px 10px 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 45%;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 5px 10px 5px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
