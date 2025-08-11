@@ -1,0 +1,11 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+body { margin: 20px; background:#f8f9fb; color:#222; }
+.container { max-width:800px; margin:0 auto; }
+.controls { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+.quoteDisplay { background:white; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.06); min-height:80px; }
+.quoteDisplay .text { font-size:1.25rem; margin-bottom:12px; }
+.quoteDisplay .meta { color:#666; font-size:.95rem; }
+#addQuoteContainer { margin-top:16px; }
+.status { margin-top:12px; color:#0b5; min-height:1.2em; }
+input[type="text"] { padding:6px 8px; border-radius:5px; border:1px solid #ddd; }
+button { padding:6px 10px; border-radius:6px; border:1px solid #cfcfcf; background: #fff; cursor:pointer; }
