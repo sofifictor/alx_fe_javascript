@@ -1,64 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dynamic Quote Generator</title>
-  <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; max-width:860px; margin:20px auto; padding:0 12px; }
-    #quoteDisplay { margin:12px 0; padding:12px; border-radius:8px; background:#f3f4f6; min-height:56px; }
-    label { display:block; margin-top:8px; }
-    input[type="text"] { width:100%; padding:8px; box-sizing:border-box; margin-top:4px; }
-    .row { display:flex; gap:8px; align-items:center; margin-top:12px; }
-    .row > * { flex:1; }
-    button { padding:8px 12px; cursor:pointer; }
-    #notifications { margin-top:12px; }
-    #conflictsPanel { margin-top:12px; padding:12px; border-radius:8px; background:#fff7e6; display:none; }
-    .conflict { margin-bottom:8px; padding:8px; border-radius:6px; background:#fff; }
-  </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <label for="categoryFilter">Filter by category:</label>
-  <select id="categoryFilter">
+  <select id="categoryFilter" onchange="filterQuotes()">
     <option value="all">All Categories</option>
   </select>
 
-  <div id="quoteDisplay" aria-live="polite"></div>
+  <div id="quoteDisplay"></div>
 
-  <div class="row">
-    <button id="newQuote">Show New Quote</button>
-    <button id="syncNow">Sync Now</button>
-    <button id="exportBtn" type="button">Export JSON</button>
-    <input type="file" id="importFile" accept=".json" />
-  </div>
-
-  <hr />
+  <button id="newQuote">Show New Quote</button>
 
   <div>
-    <label for="newQuoteText">New quote</label>
     <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-
-    <label for="newQuoteCategory">Category</label>
     <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-
-    <div style="margin-top:8px;">
-      <button onclick="addQuote()">Add Quote</button>
-    </div>
+    <button onclick="addQuote()">Add Quote</button>
   </div>
 
-  <div id="notifications" aria-live="polite"></div>
-
-  <div id="conflictsPanel" aria-live="polite">
-    <h3>Conflicts Detected</h3>
-    <div id="conflictsList"></div>
-    <div style="margin-top:8px;"><button id="closeConflicts">Close</button></div>
+  <div>
+    <button id="exportQuotes">Export Quotes</button>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
   </div>
+
+  <div id="syncStatus"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
